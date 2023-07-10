@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'About me';
 
@@ -23,15 +21,7 @@ const finished = false;
 const goal = 3;
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-
+<BaseLayout pageTitle={pageTitle}>
   <style define:vars={{ skillColor, aboutColor, fontWeight }}>
     h1 {
       color: Red;
@@ -48,48 +38,38 @@ const goal = 3;
     }
   </style>
 
-  <body>
-    <Header />
+  <h1>{pageTitle}</h1>
+  <h2>... and my new Astro site!</h2>
 
-    <h1>{pageTitle}</h1>
-    <h2>... and my new Astro site!</h2>
+  <p>
+    I am working through Astro's introductory tutorial. This is the second page
+    on my website, and it's the first one I built myself!
+  </p>
 
-    <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
-    </p>
+  <p>
+    This site will update as I complete more of the tutorial, so keep checking
+    back and see how my journey is going!
+  </p>
 
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
+  <p>Here are a few facts about me:</p>
+  <ul class='aboutInfo'>
+    <li>My name is {aboutInfo.name}.</li>
+    <li>
+      I live in {aboutInfo.place} and I work as a {aboutInfo.job}.
+    </li>
+  </ul>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map(skill => <li class='skill'>{skill}</li>)}
+  </ul>
 
-    <p>Here are a few facts about me:</p>
-    <ul class='aboutInfo'>
-      <li>My name is {aboutInfo.name}.</li>
-      <li>
-        I live in {aboutInfo.place} and I work as a {aboutInfo.job}.
-      </li>
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-      {skills.map(skill => <li class='skill'>{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-    {finished && <p>I finished this tutorial!</p>}
-    {
-      goal === 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not 3 days.</p>
-      )
-    }
-
-    <Footer />
-
-    <script>
-      import '../scripts/menu.js';
-    </script>
-  </body>
-</html>
+  {happy && <p>I am happy to be learning Astro!</p>}
+  {finished && <p>I finished this tutorial!</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
+</BaseLayout>
