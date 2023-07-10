@@ -1,4 +1,24 @@
 ---
+import '../styles/global.css';
+
+const pageTitle = 'About me';
+
+const aboutInfo = {
+  name: 'Noora Nasrin VC',
+  age: 24,
+  job: 'Developer',
+  place: 'Kerala',
+};
+
+const skills = ['html', 'css', 'js', 'react', 'node js'];
+
+const aboutColor = 'green';
+const skillColor = 'tomato';
+const fontWeight = 'bold';
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang='en'>
@@ -7,15 +27,31 @@
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
+
+  <style define:vars={{ skillColor, aboutColor, fontWeight }}>
+    h1 {
+      color: Red;
+      font-size: 4rem;
+    }
+
+    .aboutInfo {
+      color: var(--aboutColor);
+    }
+
+    .skill {
+      color: var(--skillColor);
+      font-weight: var(--fontWeight);
+    }
+  </style>
+
   <body>
     <a href='/'>Home</a>
     <a href='/about'>About</a>
     <a href='/blog'>Blog</a>
 
-    <h1>My Astro Site</h1>
-    <h1>About Me</h1>
+    <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
     <p>
@@ -27,5 +63,27 @@
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
+
+    <p>Here are a few facts about me:</p>
+    <ul class='aboutInfo'>
+      <li>My name is {aboutInfo.name}.</li>
+      <li>
+        I live in {aboutInfo.place} and I work as a {aboutInfo.job}.
+      </li>
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map(skill => <li class='skill'>{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
   </body>
 </html>
