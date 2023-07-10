@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 const pageTitle = 'About me';
 
@@ -47,9 +49,7 @@ const goal = 3;
   </style>
 
   <body>
-    <a href='/'>Home</a>
-    <a href='/about'>About</a>
-    <a href='/blog'>Blog</a>
+    <Header />
 
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
@@ -85,5 +85,7 @@ const goal = 3;
         <p>My goal is not 3 days.</p>
       )
     }
+
+    <Footer />
   </body>
 </html>
