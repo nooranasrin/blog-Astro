@@ -1,7 +1,9 @@
 ---
+import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout pageTitle='Home Page'>
   <h2>My Awesome Blog Site</h2>
+  <Greeting client:load messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
 </BaseLayout>
