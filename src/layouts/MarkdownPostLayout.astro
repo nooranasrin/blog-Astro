@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Tags from '../components/Tags.astro';
 const { frontmatter } = Astro.props;
 ---
 
@@ -8,18 +9,6 @@ const { frontmatter } = Astro.props;
   <p>Published on {frontmatter.pubDate}</p>
   <p><em>{frontmatter.description}</em></p>
   <img src={frontmatter.image.url} width='300' alt={frontmatter.image.alt} />
-  <div class='tags'>
-    {frontmatter.tags.map(tag => <div class='tag'>#{tag}</div>)}
-  </div>
+  <Tags tags={frontmatter.tags} />
   <slot />
-
-  <style>
-    .tags {
-      display: flex;
-    }
-    .tag {
-      margin-right: 1rem;
-      color: blue;
-    }
-  </style>
 </BaseLayout>
