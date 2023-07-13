@@ -21,11 +21,11 @@ const finished = true;
 const goal = 3;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} heading={pageTitle}>
   <style define:vars={{ skillColor, aboutColor, fontWeight }}>
-    h1 {
+    h2 {
       color: Red;
-      font-size: 4rem;
+      font-size: 2rem;
     }
 
     .aboutInfo {
@@ -38,7 +38,6 @@ const goal = 3;
     }
   </style>
 
-  <h1>{pageTitle}</h1>
   <h2>... and my new Astro site!</h2>
 
   <p>
