@@ -3,6 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import ThemeIcon from '../components/ThemeIcon.astro';
+import PageHeader from '../components/PageHeader.astro';
 
 const { pageTitle, heading } = Astro.props;
 ---
@@ -22,9 +23,11 @@ const { pageTitle, heading } = Astro.props;
         <ThemeIcon />
         <Footer />
       </div>
-      <div>
-        <h1>{heading}</h1>
-        <slot />
+      <div class='page'>
+        <PageHeader title={heading} />
+        <div class='content'>
+          <slot />
+        </div>
       </div>
     </div>
     <script>
