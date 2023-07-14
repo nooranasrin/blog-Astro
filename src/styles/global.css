@@ -18,29 +18,59 @@ h1 {
 }
 
 html.dark {
-  background-color: #0d0950;
+  background-color: rgb(0, 0, 0);
   color: #fff;
+}
+
+.dark .social {
+  background-color: rgba(175, 169, 169, 0.3);
 }
 
 .dark .nav-links a {
   color: #fff;
 }
 
+.dark .active {
+  background-color: rgba(175, 169, 169, 0.3);
+}
+
 .dark .sidebar {
   border-right: 0.5px solid #fff;
+}
+
+.dark .pageHeader {
+  border-bottom: 0.5px solid #fff;
+}
+
+.social {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  text-decoration: none;
+  height: fit-content;
+  width: 50%;
+  text-align: center;
 }
 
 .screen {
   display: flex;
 }
+
+.pageHeader {
+  border-bottom: 0.7px solid rgba(0, 0, 0, 0.5);
+  padding: 0 2vw 0 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+
 .sidebar {
   height: 98vh;
-  width: 20%;
-  border-right: 0.5px solid #0d0950;
+  width: 16%;
+  border-right: 0.7px solid rgba(0, 0, 0, 0.5);
 }
 
 .page {
-  width: 80%;
+  width: 83%;
 }
 
 .content {
@@ -48,10 +78,9 @@ html.dark {
 }
 
 .active {
-  background-color: rgba(39, 30, 213, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
   color: #fff;
 }
-
 
 .hamburger {
   padding-right: 20px;
@@ -76,6 +105,7 @@ html.dark {
   text-transform: uppercase;
   margin-right: 0.5vw;
   cursor: pointer;
+  color: rgb(0, 0, 0);
 }
 
 .expanded {
