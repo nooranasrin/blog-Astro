@@ -1,11 +1,55 @@
 ---
 import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import blogImg1 from '../../public/blog1.jpg';
+import blogImg2 from '../../public/blog2.jpg';
+import blogImg3 from '../../public/blog3.jpg';
+import blogImg4 from '../../public/blog4.jpg';
+import blogImg5 from '../../public/blog5.jpg';
 
 const pageTitle = 'Home Page';
-const heading = 'My Awesome Blog Site';
+const heading = 'Welcome To My Awesome Blog Site';
 ---
 
 <BaseLayout pageTitle={pageTitle} heading={heading}>
   <Greeting client:load messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
+  <div class='container'>
+    <div class='blogImg'>
+      <img src={blogImg1} height='200' width='200' />
+      <img src={blogImg2} height='200' width='200' />
+      <img src={blogImg3} height='200' width='200' />
+      <img src={blogImg4} height='200' width='200' />
+      <img src={blogImg5} height='200' width='200' />
+    </div>
+    <p>
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+      roots in a piece of classical Latin literature from 45 BC, making it over
+      2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+      College in Virginia, looked up one of the more obscure Latin words,
+      consectetur, from a Lorem Ipsum passage, and going through the cites of
+      the word in classical literature, discovered the undoubtable source. Lorem
+      Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+      Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
+      book is a treatise on the theory of ethics, very popular during the
+      Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+      amet..", comes from a line in section 1.10.32.
+    </p>
+  </div>
 </BaseLayout>
+
+<style>
+  img {
+    margin: 5px;
+  }
+  .blogImg {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container {
+    width: 70vw;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 15vh;
+    text-align: center;
+  }
+</style>
