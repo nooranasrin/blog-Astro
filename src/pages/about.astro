@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import blogImg4 from '../../public/blog4.jpg';
 
 const pageTitle = 'About me';
 
@@ -8,67 +9,49 @@ const aboutInfo = {
   age: 24,
   job: 'Developer',
   place: 'Kerala',
+  company: 'ABC',
+  experience: 3,
 };
 
-const skills = ['html', 'css', 'js', 'react', 'node js'];
+const skills = ['html', 'css', 'js', 'react', 'node js', 'redux'];
 
 const aboutColor = 'green';
 const skillColor = 'tomato';
 const fontWeight = 'bold';
-
-const happy = true;
-const finished = true;
-const goal = 3;
 ---
 
 <BaseLayout pageTitle={pageTitle} heading={pageTitle}>
-  <style define:vars={{ skillColor, aboutColor, fontWeight }}>
-    h2 {
-      color: Red;
-      font-size: 2rem;
-    }
-
-    .aboutInfo {
-      color: var(--aboutColor);
-    }
-
-    .skill {
-      color: var(--skillColor);
-      font-weight: var(--fontWeight);
-    }
-  </style>
-
-  <h2>... and my new Astro site!</h2>
-
-  <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
-  </p>
-
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
-
-  <p>Here are a few facts about me:</p>
-  <ul class='aboutInfo'>
-    <li>My name is {aboutInfo.name}.</li>
-    <li>
-      I live in {aboutInfo.place} and I work as a {aboutInfo.job}.
-    </li>
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map(skill => <li class='skill'>{skill}</li>)}
-  </ul>
-
-  {happy && <p>I am happy to be learning Astro!</p>}
-  {finished && <p>I finished this tutorial!</p>}
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
+  <div class='profileImg'>
+    <img src={blogImg4} height='300' width='300' />
+    <p>
+      I'm <b>{aboutInfo.name}</b> and I am a <b>{aboutInfo.job}</b> @{
+        aboutInfo.company
+      }. I'm a passionate
+      {aboutInfo.job} with <b>{aboutInfo.experience}+</b> years of experience in
+      programming. I'm from <b>{aboutInfo.place}</b>. I'm a curious learner and
+      excellent team player. My main skills are around <b>Javascript</b> echosystem
+      which includes
+      {skills.map(skill => <span class='skill'>{skill},</span>)}<span
+        class='skill'>etc..</span
+      >
+    </p>
+  </div>
 </BaseLayout>
+
+<style define:vars={{ skillColor, aboutColor, fontWeight }}>
+  p {
+    text-align: left;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    margin-left: 2px;
+  }
+
+  .profileImg {
+    margin: 0 auto;
+    text-align: center;
+    width: 50vw;
+  }
+</style>
