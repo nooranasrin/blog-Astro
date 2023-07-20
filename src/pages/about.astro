@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import blogImg4 from '../../public/blog4.jpg';
+import profileImg from '../assets/images/blog1.jpg';
 
 const pageTitle = 'About me';
 
@@ -22,7 +22,7 @@ const fontWeight = 'bold';
 
 <BaseLayout pageTitle={pageTitle} heading={pageTitle}>
   <div class='profileImg'>
-    <img src={blogImg4} height='300' width='300' />
+    <img src={profileImg} height='300' width='300' />
     <p>
       I'm <b>{aboutInfo.name}</b> and I am a <b>{aboutInfo.job}</b> @{
         aboutInfo.company
@@ -53,5 +53,9 @@ const fontWeight = 'bold';
     margin: 0 auto;
     text-align: center;
     width: 50vw;
+  }
+
+  .profileImg img {
+    border-radius: 50%;
   }
 </style>
