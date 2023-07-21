@@ -56,6 +56,12 @@ html.dark {
   display: flex;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .pageHeader {
   border-bottom: 0.7px solid rgba(0, 0, 0, 0.5);
   padding: 0 2vw 0 2vw;

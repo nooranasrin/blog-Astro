@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 const posts = await Astro.glob('./posts/*.md');
@@ -7,15 +8,7 @@ const pageTitle = 'My Astro Learning Blogs';
 ---
 
 <BaseLayout pageTitle={pageTitle} heading={pageTitle}>
-  <div>
+  <div class='flex'>
     {posts.map(post => <BlogPost post={post} />)}
   </div>
 </BaseLayout>
-
-<style>
-  div {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-</style>
