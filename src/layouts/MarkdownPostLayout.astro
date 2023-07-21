@@ -4,11 +4,35 @@ import Tags from '../components/Tags.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
-  <p>Written by {frontmatter.author}</p>
-  <p>Published on {frontmatter.pubDate}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <img src={frontmatter.image.url} width='300' alt={frontmatter.image.alt} />
-  <Tags tags={frontmatter.tags} />
-  <slot />
+<BaseLayout pageTitle={frontmatter.title} heading={frontmatter.title}>
+  <div class='container'>
+    <img src={frontmatter.image.url} width='300' alt={frontmatter.image.alt} />
+    <p class='info'>Written by: <b>{frontmatter.author}</b></p>
+    <p class='info'>Published on: <b>{new Date(frontmatter.pubDate)}</b></p>
+    <p class='desc'>{frontmatter.description}</p>
+    <Tags tags={frontmatter.tags} />
+    <hr />
+    <slot />
+  </div>
 </BaseLayout>
+
+<style>
+  .desc {
+    font-size: larger;
+  }
+  .info {
+    font-style: italic;
+    font-weight: 100;
+  }
+  .container > img {
+    text-align: center;
+    align-items: center;
+    align-self: center;
+  }
+  .container {
+    width: 65vw;
+    margin: 0 auto;
+    border-radius: 8px;
+    text-align: left;
+  }
+</style>
