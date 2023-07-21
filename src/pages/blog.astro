@@ -3,13 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 const posts = await Astro.glob('./posts/*.md');
 
-const pageTitle = 'My Astro Learning Blog';
+const pageTitle = 'My Astro Learning Blogs';
 ---
 
 <BaseLayout pageTitle={pageTitle} heading={pageTitle}>
-  {
-    posts.map(post => (
-      <BlogPost url={post.url} title={post.frontmatter.title} />
-    ))
-  }
+  <div>
+    {posts.map(post => <BlogPost post={post} />)}
+  </div>
 </BaseLayout>
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+</style>

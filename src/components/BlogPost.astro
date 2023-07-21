@@ -1,7 +1,40 @@
 ---
-const { url, title } = Astro.props;
+const { post } = Astro.props;
 ---
 
-<div>
-  <a href={url}>{title}</a>
+<div class='container'>
+  <img
+    src={post.frontmatter.image.url}
+    width='200'
+    height='210'
+    alt={post.frontmatter.image.alt}
+  />
+  <p>{post.frontmatter.title}</p>
+  <div><a href={post.url} target='_blank'>Read More</a></div>
 </div>
+
+<style>
+  a {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #999;
+    background-color: #fff;
+    color: black;
+  }
+  .container > img {
+    margin-top: 20px;
+  }
+  .container > P {
+    margin-bottom: 20px;
+  }
+  .container {
+    box-shadow: inset 3px -4px 20px 0 rgba(29, 98, 17, 0.2);
+    border: 1px solid #999;
+    border-radius: 5px;
+    width: 20%;
+    height: 38vh;
+    margin: 5px;
+    text-align: center;
+  }
+</style>

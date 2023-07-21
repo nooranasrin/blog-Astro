@@ -4,7 +4,7 @@ title: My Third Blog Post
 author: Astro Learner
 description: 'I had some challenges, but asking in the community really helped!'
 image:
-  url: 'https://docs.astro.build/assets/rays.webp'
+  url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIo6gk4Wa3kxhhedXprCqWTq1n5ELNoh_AF4H28Kq&s'
   alt: 'Thumbnail of Astro rays.'
 pubDate: 2022-07-15
 tags: ['astro', 'learning in public', 'setbacks', 'community']
