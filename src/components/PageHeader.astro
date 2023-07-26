@@ -1,11 +1,20 @@
 ---
 import '../styles/global.css';
 import ThemeIcon from './ThemeIcon.astro';
+import SearchBar from './SearchBar';
 
 const { title } = Astro.props;
+const posts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <div class='pageHeader'>
   <h2>{title}</h2>
+  <SearchBar client:load posts={posts} />
   <ThemeIcon />
 </div>
+
+<style>
+  h2 {
+    width: 65%;
+  }
+</style>

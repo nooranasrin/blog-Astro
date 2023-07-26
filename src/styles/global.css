@@ -17,6 +17,17 @@ h1 {
   font-size: 2.5rem;
 }
 
+input {
+  width: 35vh;
+  height: 5vh;
+  border-radius: 20px;
+  border: 0.7px solid rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1vw;
+  position: relative;
+}
+
 html.dark {
   background-color: rgb(0, 0, 0);
   color: #fff;
@@ -134,4 +145,27 @@ html.dark {
   .hamburger {
     display: none;
   }
+}
+
+.searchResult {
+  height: 4vh;
+  width: 20vw;
+  text-align: center;
+  background-color: #312f2f;
+  color: #fff;
+  margin-top: 2px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.dark .searchResult {
+  background-color: #fff;
+  color: #312f2f;
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 5px;
 }

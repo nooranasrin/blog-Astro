@@ -1,5 +1,4 @@
 ---
-import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import blogImg1 from '../assets/images/blog1.jpg';
 import blogImg2 from '../assets/images/blog2.jpg';
@@ -12,7 +11,6 @@ const heading = 'Welcome To My Awesome Blog Site';
 ---
 
 <BaseLayout pageTitle={pageTitle} heading={heading}>
-  <Greeting client:load messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
   <div class='container'>
     <div class='blogImg'>
       <img src={blogImg1} height='200' width='200' />
